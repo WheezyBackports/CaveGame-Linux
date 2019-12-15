@@ -1,17 +1,18 @@
 #!/bin/bash
 
-
+## Downloads Cave Game source if not already available
 if [ ! -f ~/cavegame/ ]; then
 
 	git clone https://github.com/conariumsoft/cavegame.git
 
 fi
 
-
+## Executes game
 if [ -f love2d.AppImage ]; then 
 
 	./love2d.AppImage cavegame/.
-	
+
+## Downloads love2d if not already available 	
 else
 
 	wget -O love2d.AppImage https://bitbucket.org/rude/love/downloads/love-11.3-x86_64.AppImage && chmod +x *.AppImage && ./love2d.AppImage cavegame/.
